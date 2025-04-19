@@ -56,9 +56,9 @@ function addOpacity(element, amount)
 
 function randomColor(element)
 {
-    let red = (Math.floor(Math.random() * 255)).toString(16);
-    let green = (Math.floor(Math.random() * 255)).toString(16);
-    let blue = (Math.floor(Math.random() * 255)).toString(16);
+    let red = Math.floor(Math.random() * 255).toString(16);
+    let green = Math.floor(Math.random() * 255).toString(16);
+    let blue = Math.floor(Math.random() * 255).toString(16);
 
     element.style.backgroundColor = "#" + red + green + blue;
 }
