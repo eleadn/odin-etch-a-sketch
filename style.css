@@ -1,0 +1,36 @@
+body
+{
+    margin: 0;
+    padding: 0;
+}
+
+.resetGrid
+{
+    margin: 16px;
+}
+
+.container
+{
+    width: 800px;
+    height: 800px;
+    border-style: solid;
+    border-color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-line
+{
+    display: flex;
+    flex: 1;
+}
+
+.grid-column
+{
+    flex: 1;
+}
+
+.hovered
+{
+    background-color: grey;
+}
