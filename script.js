@@ -9,7 +9,8 @@ function createLine(lineCount, parent)
     {
         let div = document.createElement("div");
         div.classList.add("grid-column");
-        div.addEventListener("mouseenter", context => randomColor(context.target));
+        div.style.opacity = 0;
+        div.addEventListener("mouseenter", context => onMouseEnter(context.target));
         parent.appendChild(div);
     }
 }
@@ -28,6 +29,29 @@ function createRows(rowCount, lineCount, container)
         createLine(lineCount, div);
         container.appendChild(div);
     }
+}
+
+function onMouseEnter(element)
+{
+    randomColor(element);
+    addOpacity(element, 0.1);
+}
+
+function clamp(value, min, max)
+{
+    if (min > max)
+    {
+        let tmp = min;
+        min = max;
+        max = tmp;
+    }
+
+    return value < min ? min : value > max ? max : value;
+}
+
+function addOpacity(element, amount)
+{
+    element.style.opacity = clamp(Number.parseFloat(element.style.opacity) + amount, 0, 1);
 }
 
 function randomColor(element)
