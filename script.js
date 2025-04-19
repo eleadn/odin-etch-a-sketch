@@ -9,8 +9,7 @@ function createLine(lineCount, parent)
     {
         let div = document.createElement("div");
         div.classList.add("grid-column");
-        div.addEventListener("mouseenter", context => toggleHovered(context.target));
-        div.addEventListener("mouseleave", context => toggleHovered(context.target))
+        div.addEventListener("mouseenter", context => randomColor(context.target));
         parent.appendChild(div);
     }
 }
@@ -31,9 +30,13 @@ function createRows(rowCount, lineCount, container)
     }
 }
 
-function toggleHovered(element)
+function randomColor(element)
 {
-    element.classList.toggle("hovered");
+    let red = (Math.floor(Math.random() * 255)).toString(16);
+    let green = (Math.floor(Math.random() * 255)).toString(16);
+    let blue = (Math.floor(Math.random() * 255)).toString(16);
+
+    element.style.backgroundColor = "#" + red + green + blue;
 }
 
 function removeAllChilds(container)
